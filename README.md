@@ -64,3 +64,5 @@ Credit is appreciated
 Join our discord for new releases, updates and more! https://discord.gg/xb7pzacvaD
 
 Check out some of our paid scripts here! https://hscripts.tebex.io/
+
+❤️ From H SCRIPTS
