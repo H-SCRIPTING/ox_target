@@ -43,6 +43,9 @@ Works with all ox_target interactions
 Fully customizable
 
 📸 Preview
+<img width="1920" height="750" alt="1" src="https://github.com/user-attachments/assets/df7560d8-1f52-4ce2-b74b-d2ee6f9c2bd5" />
+<img width="1920" height="762" alt="2" src="https://github.com/user-attachments/assets/4e9c3ec9-be35-4698-9e7e-839d4154dcae" />
+
 
 image image
 ❤️ Credits
