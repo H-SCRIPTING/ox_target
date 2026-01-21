@@ -60,3 +60,5 @@ UI redesign by H SCRIPTS
 Free resource
 Do not resell
 Credit is appreciated
+
+Join our discord for new releases, updates and more! https://discord.gg/xb7pzacvaD
