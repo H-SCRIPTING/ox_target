@@ -47,7 +47,6 @@ Fully customizable
 <img width="1920" height="762" alt="2" src="https://github.com/user-attachments/assets/4e9c3ec9-be35-4698-9e7e-839d4154dcae" />
 
 
-image image
 ❤️ Credits
 
 Original ox_target by overextended
