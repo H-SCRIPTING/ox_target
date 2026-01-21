@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap");
+
+/* ========================
+   CONFIGURATION VARIABLES
+   ======================== */
+:root {
+  /* Colors */
+  --color-primary: #DC2626;
+  --color-primary-glow: rgba(220, 38, 38, 0.6);
+  --color-bg-dark: rgba(15, 10, 10, 0.85);
+  --color-text: #ffffff;
+  --color-text-muted: #cfd2da;
+  --color-hover: #ff4444;
+  
+  /* Hexagon sizing */
+  --hex-size: 60px;
+  
+  /* Radial layout */
+  --ring-radius-inner: 180px;  /* Increased from 160px to space out more */
+  --ring-radius-outer: 280px;  /* Increased from 250px to space out more */
+  --option-size: 220px;  /* Width of each option button */
+  --option-height: 36px;
+  
+  /* Animation */
+  --anim-speed: 0.2s;
+  --anim-speed-slow: 0.3s;
+  
+  /* Font sizing */
+  --font-size-label: 11pt;
+  --font-size-icon: 12pt;
+}
+
+/* ========================
+   BASE STYLES
+   ======================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  visibility: hidden;
+  user-select: none;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Nunito", sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+/* ========================
+   HEXAGON CENTER RETICLE
+   ======================== */
+#eye {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--hex-size);
+  height: var(--hex-size);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--anim-speed) ease-out;
+}
+
+#hexagon {
+  width: 100%;
+  height: 100%;
+}
+
+#hexShape {
+  transition: stroke var(--anim-speed) ease, filter var(--anim-speed) ease;
+}
+
+/* Eye icon inside hexagon */
+#eyeIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+  opacity: 0.8;
+  transition: color var(--anim-speed) ease;
+}
+
+/* Show hexagon when targeting */
+.eye-visible #eye {
+  opacity: 1;
+}
+
+/* Hover state - switch to brighter glow filter and change colors */
+.eye-hover #hexShape {
+  stroke: var(--color-hover);
+  filter: url(#hexGlowHover);
+}
+
+.eye-hover #eyeIcon {
+  color: var(--color-hover);
+  opacity: 1;
+}
+
+/* ========================
+   RADIAL OPTIONS LAYOUT
+   ======================== */
+#options-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+/* Individual option container */
+.option-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  
+  /* Sizing */
+  width: var(--option-size);
+  height: var(--option-height);
+  padding: 0 12px;
+  
+  /* Positioning - set via JS */
+  top: 0;
+  left: 0;
+  
+  /* Appearance */
+  background: var(--color-bg-dark);  /* Solid background instead of gradient */
+  border: 1px solid rgba(220, 38, 38, 0.3);  /* Added subtle border */
+  border-left: 2px solid transparent;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-label);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  
+  /* Pointer events */
+  pointer-events: auto;
+  cursor: pointer;
+  
+  /* Animation */
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: all var(--anim-speed) ease-out;
+  
+  /* Border radius for modern look */
+  border-radius: 4px;
+}
+
+/* Animate options in */
+.option-container.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Hover state */
+.option-container:hover {
+  background: rgba(220, 38, 38, 0.2);  /* Solid red tint on hover */
+  border: 1px solid var(--color-primary);
+  border-left: 2px solid var(--color-primary);
+  color: var(--color-text);
+  transform: translate(-50%, -50%) scale(1.05);
+  z-index: 10;
+}
+
+/* Icon styling */
+.option-icon {
+  flex-shrink: 0;
+  font-size: var(--font-size-icon);
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  transition: color var(--anim-speed);
+}
+
+.option-container:hover .option-icon {
+  color: var(--color-hover);
+}
+
+/* Label styling */
+.option-label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* ========================
+   PAGINATION INDICATOR
+   ======================== */
+#page-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background: var(--color-bg-dark);
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  padding: 6px 12px;
+  
+  color: var(--color-text);
+  font-size: 10pt;
+  font-weight: 600;
+  
+  opacity: 0;
+  transition: opacity var(--anim-speed);
+  pointer-events: none;
+}
+
+#page-indicator.visible {
+  opacity: 1;
+}
+
+/* ========================
+   RESPONSIVE ADJUSTMENTS
+   ======================== */
+
+/* For smaller screens, reduce sizing */
+@media (max-height: 900px) {
+  :root {
+    --ring-radius-inner: 160px;  /* Adjusted for smaller screens */
+    --ring-radius-outer: 260px;  /* Adjusted for smaller screens */
+    --option-size: 190px;
+    --option-height: 32px;
+    --font-size-label: 10pt;
+    --hex-size: 50px;
+  }
+}
+
+/* For ultra-wide monitors */
+@media (min-aspect-ratio: 21/9) {
+  :root {
+    --ring-radius-inner: 180px;
+    --ring-radius-outer: 280px;
+  }
+}
+
+/* ========================
+   STAGGER ANIMATION
+   ======================== */
+.option-container:nth-child(1) { transition-delay: 0.02s; }
+.option-container:nth-child(2) { transition-delay: 0.04s; }
+.option-container:nth-child(3) { transition-delay: 0.06s; }
+.option-container:nth-child(4) { transition-delay: 0.08s; }
+.option-container:nth-child(5) { transition-delay: 0.10s; }
+.option-container:nth-child(6) { transition-delay: 0.12s; }
+.option-container:nth-child(7) { transition-delay: 0.14s; }
+.option-container:nth-child(8) { transition-delay: 0.16s; }
+.option-container:nth-child(9) { transition-delay: 0.18s; }
+.option-container:nth-child(10) { transition-delay: 0.20s; }
+.option-container:nth-child(11) { transition-delay: 0.22s; }
+.option-container:nth-child(12) { transition-delay: 0.24s; }
+.option-container:nth-child(13) { transition-delay: 0.26s; }
+.option-container:nth-child(14) { transition-delay: 0.28s; }
+.option-container:nth-child(15) { transition-delay: 0.30s; }
+.option-container:nth-child(16) { transition-delay: 0.32s; }

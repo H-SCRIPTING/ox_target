@@ -1,68 +1,30 @@
-🔴 H SCRIPTS – Advanced ox_target UI Redesign
+# ox_target
 
-A fully redesigned ox_target interface with improved spacing, refined radial positioning, and a cleaner, more modern layout.
-
-This version has been heavily modified from the default ox_target UI to improve readability, usability, and overall visual quality — while remaining fully compatible with all existing ox_target interactions.
-
-Colors, styles, and layout elements are fully customizable to match any server theme.
-
-✨ Features
-
-Improved radial option spacing (no overlapping)
-
-Clean, modern UI layout
-
-Refined option positioning
-
-No size changes to buttons or text
-
-Fully compatible with all ox_target scripts
-
-No performance impact
-
-Standalone & lightweight
+![](https://img.shields.io/github/downloads/overextended/ox_target/total?logo=github)
+![](https://img.shields.io/github/downloads/overextended/ox_target/latest/total?logo=github)
+![](https://img.shields.io/github/contributors/overextended/ox_target?logo=github)
+![](https://img.shields.io/github/v/release/overextended/ox_target?logo=github) 
 
 
-🛠️ Installation
+A performant and flexible standalone "third-eye" targeting resource, with additional functionality for supported frameworks.
 
-Extract the folder
-
-Replace your existing ox_target with my resource (all files)
-
-Restart your server
-
-Done
-
-⚠️ Notes
-
-UI redesign only
-
-No gameplay changes
-
-Works with all ox_target interactions
-
-Fully customizable
-
-📸 Preview
-
-<img width="1920" height="750" alt="image" src="https://github.com/user-attachments/assets/25586713-1775-42e3-ac80-17e4419f8003" />
-<img width="1920" height="762" alt="image" src="https://github.com/user-attachments/assets/bb8f3cfa-46fb-45b3-b92d-411a8479018d" />
+ox_target is the successor to qtarget, which was a mostly-compatible fork of bt-target.
+To improve many design flaws, ox_target has been written from scratch and drops support for bt-target/qtarget standards, though partial compatibility is being implemented where possible.
 
 
-❤️ Credits
+## 📚 Documentation
 
-Original ox_target by overextended
+https://overextended.dev/ox_target
 
-UI redesign by H SCRIPTS
+## 💾 Download
 
-📜 License
+https://github.com/overextended/ox_target/releases/latest/download/ox_target.zip
 
-Free resource
-Do not resell
-Credit is appreciated
+## ✨ Features
 
-Join our discord for new releases, updates and more! https://discord.gg/xb7pzacvaD
-
-Check out some of our paid scripts here! https://hscripts.tebex.io/
-
-❤️ From H SCRIPTS
+- Improved entity and world collision than its predecessor.
+- Improved error handling when running external code.
+- Menus for nested target options.
+- Partial compatibility for qtarget (the thing qb-target is based on, I made the original idiots).
+- Registering options no longer overrides existing options.
+- Groups and items checking for supported frameworks.

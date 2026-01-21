@@ -1,0 +1,11 @@
+{
+  "colors": {
+    "primary": "#DC2626",
+    "primaryGlow": "rgba(220, 38, 38, 0.6)",
+    "hover": "#ff4444",
+    "background": "rgba(15, 10, 10, 0.85)",
+    "text": "#ffffff",
+    "textMuted": "#cfd2da"
+  },
+  "note": "Change these hex colors to customize the ox_target theme. The glow effects will automatically adapt to your chosen colors."
+}
