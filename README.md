@@ -67,6 +67,26 @@ Screenshots of the redesigned interface are shown above.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/da038bbd-e155-43b4-9d84-a7e4eee11703" />
 
+⚠️ Important
+
+This is a UI redesign of ox_target.
+
+It is intended to provide a more modern visual experience while keeping the underlying targeting functionality intact.
+
+Always keep a backup of your existing resource before replacing it.
+
+🙏 Credits
+
+Built as a visual redesign based on the open-source ox_target project by the Overextended / CommunityOx developers.
+
+All credit for the original targeting system and functionality belongs to the original developers.
+
+This project focuses on providing an alternative visual experience for FiveM servers.
+
+📄 License
+
+See the included LICENSE file for licensing information.
+
 ## 📦 Installation
 
 1. Download.
