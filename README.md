@@ -9,3 +9,7 @@
 
 
 A performant and flexible standalone "third-eye" targeting resource, with additional functionality for supported frameworks.
+
+Improved responsiveness.
+
+Improved Visuals.
