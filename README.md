@@ -59,7 +59,7 @@ The underlying ox_target targeting functionality remains intact, including:
 
 ## 📸 Preview
 
-Screenshots of the redesigned interface are shown above.
+Screenshots of the redesigned interface are shown below.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/219dd8b8-e8f2-47d2-8026-39e1c2e59400" />
 
